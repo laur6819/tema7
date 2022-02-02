@@ -84,31 +84,29 @@
       pic1.src = "https://placeimg.com/400/300/nature";
       pic1.alt = "NY TEKST HER";
       console.log(pic1);
+
+      // Indsættelse af nyt billede nedenunder //
+
+      let mainSection = document.querySelector("section");
+      let newArticle = document.createElement("article");
+
+      //billede indsat
+      let img2 = document.createElement("img");
+      img2.src = "https://placeimg.com/400/300/nature";
+      newArticle.appendChild(img2);
+      mainSection.appendChild(newArticle);
+      //overskrift indsat
+      let h2new = document.createElement("h2");
+      let overskrift = document.createTextNode("Min overskrift til ny article");
+      h2new.appendChild(overskrift);
+      mainSection.appendChild(overskrift);
+      console.log(overskrift);
+      //ny artikel
+      let pnew = document.createElement("p");
+      let tekst = document.createTextNode("lorem ipsum");
+      pnew.appendChild(tekst);
+      mainSection.appendChild(tekst);
+      console.log(tekst);
     </script>
   </body>
 </html>
-
-<!-- <script>
-      const overskrift = document.querySelector("h1");
-      overskrift.textContent;
-      console.log(overskrift.textContent);
-
-      const underoverskrift = document.querySelector("h2");
-      underoverskrift.textContent;
-      console.log(underoverskrift.textContent);
-
-      const section = document.querySelector("section");
-      section.textContent;
-      console.log(section.textContent);
-
-      //opgave 4
-      let mainSection = document.querySelector("section");
-      let newArticle = document.createElement("article");
-      let overskrift = document.createElement("h3");
-      let overskriftText = document.createTextNode("Article 3");
-      overskrift.appendChild(overskriftText);
-      newArticle.appendChild(overskrift);
-      mainSection.appeendChild(newArticle);
-    </script>
-  </body>
-</html> -->
