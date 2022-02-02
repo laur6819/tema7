@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Titel</h1>
+    </header>
+    <main>
+      <h2>Undertitel</h2>
+      <section class="section1">
+        <article>
+            <div class="img1">
+          <img src="https://placeimg.com/400/300/any" alt="width 500" />
+          <h2>Article 1</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus,
+            nobis magni rem possimus dolorum delectus beatae sit consectetur
+            dignissimos, ea quod est optio, natus odit. Exercitationem cum
+            aliquam fugit quam?
+          </p>
+        </article>
+        </div>
+        <article>
+          <img src="https://placeimg.com/400/300/any" alt="width 500" />
+          <h2>Article 2</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam
+            voluptate exercitationem itaque et dolorum accusamus mollitia
+            voluptas iste harum dignissimos facere laborum impedit animi
+            provident, magnam qui eos aperiam ipsum.
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <hr />
+      This is the footer
+      <hr />
+    </footer>
+    <script>
+      //opgave 2
+      const header = document.querySelector("header h1");
+      console.log(header);
+
+      header.textContent = "noget helt andet";
+      header.innerHTML = "<h1>Noget nyt og anderledes</h1>";
+
+      const h2 = document.querySelector("h2");
+      console.log(h2);
+
+      const h21 = document.querySelector("article:first-child h2");
+      console.log(h21);
+
+      h21.textContent = "noget helt andet";
+      h21.innerHTML = "<h1>Noget nyt og anderledes</h1>";
+
+      const h22 = document.querySelector("article:nth-child(2) h2");
+      console.log(h22);
+
+      h22.textContent = "noget helt andet";
+      h22.innerHTML = "<h1>Noget nyt og anderledes</h1>";
+
+      const articlep = document.querySelector("article:first-child p");
+      console.log(articlep);
+
+      const articlep2 = document.querySelector("article:nth-child(2) p");
+      console.log(articlep2);
+
+      const articleimg = document.querySelector("article:first-child img");
+      console.log(articleimg);
+
+      const articleimg2 = document.querySelector("article:nth-child(2) img");
+      console.log(articleimg2);
+
+      const footer = document.querySelector("footer");
+      console.log(footer);
+
+      //opgave 3
+      const pic1 = document.querySelector("img");
+      pic1.src = "https://placeimg.com/400/300/nature";
+      pic1.alt = "NY TEKST HER";
+      console.log(pic1);
+
+      // Indsættelse af nyt billede nedenunder //
+
+      let mainSection = document.querySelector("section");
+      let newArticle = document.createElement("article");
+
+      //billede indsat
+      let img2 = document.createElement("img");
+      img2.src = "https://placeimg.com/400/300/nature";
+      newArticle.appendChild(img2);
+      mainSection.appendChild(newArticle);
+      //overskrift indsat
+      let h2new = document.createElement("h2");
+      let overskrift = document.createTextNode("Min overskrift til ny article");
+      h2new.appendChild(overskrift);
+      mainSection.appendChild(overskrift);
+      console.log(overskrift);
+      //ny artikel
+      let pnew = document.createElement("p");
+      let tekst = document.createTextNode("lorem ipsum");
+      pnew.appendChild(tekst);
+      mainSection.appendChild(tekst);
+      console.log(tekst);
+      //opgave 5
+      document.addEventListener("DOMContentLoaded", start);
+      console.log("DOM fully loaded and parsed");
+      function start() {}
+
+      //opgave 6
+//media bruges som funktion til feks. at ændre billeder
+    pic1.addEventListener("mousedown", media);
+      function media() {
+          //jeg ganger med 20 for at få et random billede (behøvede ikke at være 20)
+        pic1.src = "https://placeimg.com/400/300/arch?t=" + Math.random() * 20;
+      }
+    </script>
+  </body>
+</html>
